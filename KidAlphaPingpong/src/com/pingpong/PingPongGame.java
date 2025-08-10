@@ -136,13 +136,15 @@ public class PingPongGame extends JPanel implements KeyListener, ActionListener 
 		JMenu gameMenu = new JMenu("Game options");
 		
 		JMenuItem newGameItem = new JMenuItem("New Game");
-		JMenuItem restartItem = new JMenuItem("Restart");
+		JMenuItem exitItem = new JMenuItem("Exit");
+		
 		
 		newGameItem.addActionListener(e -> {game.resetGame();});
-		restartItem.addActionListener(e -> {game.resetGame();});
+		exitItem.addActionListener(e -> {System.exit(0);});
 		
 		gameMenu.add(newGameItem);
-		gameMenu.add(restartItem);
+		gameMenu.addSeparator();
+		gameMenu.add(exitItem);
 		menuBar.add(gameMenu);
 		
 		frame.setJMenuBar(menuBar);
